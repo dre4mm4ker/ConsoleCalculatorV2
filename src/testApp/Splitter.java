@@ -9,8 +9,9 @@ import static testApp.Converter.convertToArabian;
 class Splitter {
     static int a;
     static int b;
-    static int sign; // 1(сложение), 2(вычетание), 3(умножение), 4(деление)
-    static boolean ar; // true - арабские, false - римские
+    enum Sign{PLUS, MINUS, MULTIPLE, DIVIDE}
+    static boolean isArabian;
+    static Sign sign;
 
 
 
@@ -27,19 +28,19 @@ class Splitter {
         }
 
         String[] nums = inputNum.split("[+/*-]");
-        if (inputNum.contains("+")){sign = 1;}
-        else if (inputNum.contains("-")) {sign=2;}
-        else if (inputNum.contains("*")) {sign=3;}
-        else {sign=4;}
+        if (inputNum.contains("+")){sign = Sign.PLUS;}
+        else if (inputNum.contains("-")) {sign = Sign.MINUS;}
+        else if (inputNum.contains("*")) {sign = Sign.MULTIPLE;}
+        else {sign = Sign.DIVIDE;}
 
 
         if(matcher2.matches()){
-            ar = true;
+            isArabian = true;
             a = Integer.parseInt(nums[0]);
             b = Integer.parseInt(nums[1]);
         }
         else {
-            ar = false;
+            isArabian = false;
             a = convertToArabian(nums[0]);
             b = convertToArabian(nums[1]);
         }

@@ -9,7 +9,7 @@ public class Main {
         while (true) {
                 String s = sc.nextLine();
                 Splitter.Split(s);
-                System.out.println(Maths.Calculate(Splitter.sign, Splitter.ar, Splitter.a, Splitter.b));
+                System.out.println(Maths.Calculate(Splitter.sign, Splitter.isArabian, Splitter.a, Splitter.b));
         }
     }
 }
