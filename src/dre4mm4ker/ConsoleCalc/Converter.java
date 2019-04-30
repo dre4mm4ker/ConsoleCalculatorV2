@@ -82,10 +82,10 @@ class Converter {
         String romanTens = romanDigit( number%10, "X", "L", "C");
         number /=10;
         String romanHundreds = romanDigit(number%10, "C", "D", "M");
-        number /=10;
-        String romanThousands = romanDigit(number%10, "M", "", "");
 
 
-        return romanThousands + romanHundreds + romanTens + romanOnes;
+
+
+        return romanHundreds + romanTens + romanOnes;
     }
 }

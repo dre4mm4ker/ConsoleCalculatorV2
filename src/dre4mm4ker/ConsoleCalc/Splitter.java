@@ -4,7 +4,7 @@ package dre4mm4ker.ConsoleCalc;
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 
-import static dre4mm4ker.ConsoleCalc.Converter.convertToArabian;
+
 
 class Splitter {
     static int a;
@@ -28,10 +28,10 @@ class Splitter {
         }
 
         String[] nums = inputNum.split("[+/*-]");
-        if (inputNum.contains("+")){sign = Sign.PLUS;}
-        else if (inputNum.contains("-")) {sign = Sign.MINUS;}
-        else if (inputNum.contains("*")) {sign = Sign.MULTIPLE;}
-        else {sign = Sign.DIVIDE;}
+        if (inputNum.contains("+")) sign = Sign.PLUS;
+        else if (inputNum.contains("-")) sign = Sign.MINUS;
+        else if (inputNum.contains("*")) sign = Sign.MULTIPLE;
+        else sign = Sign.DIVIDE;
 
 
         if(matcher2.matches()){
