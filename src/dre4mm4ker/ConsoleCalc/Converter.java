@@ -30,41 +30,25 @@ class Converter {
 
         if(n >= 1)
         {
-            if(n == 1)
-            {
-                return one;
-            }
-            else if (n == 2)
-            {
-                return one + one;
-            }
-            else if (n == 3)
-            {
-                return one + one + one;
-            }
-            else if (n==4)
-            {
-                return one + five;
-            }
-            else if (n == 5)
-            {
-                return five;
-            }
-            else if (n == 6)
-            {
-                return five + one;
-            }
-            else if (n == 7)
-            {
-                return five + one + one;
-            }
-            else if (n == 8)
-            {
-                return five + one + one + one;
-            }
-            else if (n == 9)
-            {
-                return one + ten;
+            switch (n) {
+                case 1:
+                    return one;
+                case 2:
+                    return one + one;
+                case 3:
+                    return one + one + one;
+                case 4:
+                    return one + five;
+                case 5:
+                    return five;
+                case 6:
+                    return five + one;
+                case 7:
+                    return five + one + one;
+                case 8:
+                    return five + one + one + one;
+                case 9:
+                    return one + ten;
             }
 
         }
