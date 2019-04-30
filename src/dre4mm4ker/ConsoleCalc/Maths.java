@@ -1,6 +1,6 @@
-package testApp;
+package dre4mm4ker.ConsoleCalc;
 
-import static testApp.Converter.convertToArabian;
+import static dre4mm4ker.ConsoleCalc.Converter.convertToArabian;
 
 class Maths {
 

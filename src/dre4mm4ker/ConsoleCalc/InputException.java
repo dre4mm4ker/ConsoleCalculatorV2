@@ -1,4 +1,4 @@
-package testApp;
+package dre4mm4ker.ConsoleCalc;
 
 public class InputException extends RuntimeException{
     public InputException() {

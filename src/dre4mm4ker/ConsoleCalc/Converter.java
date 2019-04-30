@@ -1,8 +1,8 @@
-package testApp;
+package dre4mm4ker.ConsoleCalc;
 
-public class Converter {
+class Converter {
 
-    public static int convertToArabian(String s) {
+    static int convertToArabian(String s) {
         switch (s) {
             case "I":
                 return 1;
@@ -26,7 +26,7 @@ public class Converter {
                 return 10;
         }
     }
-    public static String romanDigit(int n, String one, String five, String ten){
+    private static String romanDigit(int n, String one, String five, String ten){
 
         if(n >= 1)
         {
@@ -71,7 +71,7 @@ public class Converter {
         return "";
     }
 
-    public static String convertToArabian(int number) throws InputException {
+    static String convertToArabian(int number) throws InputException {
 
         if (number <= 0){
             throw new InputException("There is no 0 or negative numbers in Roman Numerals");

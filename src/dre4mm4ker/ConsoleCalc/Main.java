@@ -1,4 +1,4 @@
-package testApp;
+package dre4mm4ker.ConsoleCalc;
 
 import java.util.Scanner;
 

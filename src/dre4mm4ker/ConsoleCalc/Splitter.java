@@ -1,10 +1,10 @@
-package testApp;
+package dre4mm4ker.ConsoleCalc;
 
 
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 
-import static testApp.Converter.convertToArabian;
+import static dre4mm4ker.ConsoleCalc.Converter.convertToArabian;
 
 class Splitter {
     static int a;
@@ -41,8 +41,8 @@ class Splitter {
         }
         else {
             isArabian = false;
-            a = convertToArabian(nums[0]);
-            b = convertToArabian(nums[1]);
+            a = Converter.convertToArabian(nums[0]);
+            b = Converter.convertToArabian(nums[1]);
         }
     }
 }
