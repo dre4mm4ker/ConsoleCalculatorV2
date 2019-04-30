@@ -4,6 +4,8 @@ import java.util.Scanner;
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 
+import static testApp.Converter.convertToArabian;
+
 public class Splitter {
     int a;
     int b;
@@ -13,6 +15,7 @@ public class Splitter {
     public Splitter() throws InputException {
         Scanner sc = new Scanner(System.in);
         String s = sc.nextLine();
+        Converter conv = new Converter();
 
         String arabPattern = "([1-9]|(10))";
         String romePattern = "(I|II|III|IV|V|VI|VII|VIII|IX|X)";
@@ -43,28 +46,5 @@ public class Splitter {
             this.b = convertToArabian(nums[1]);
         }
     }
-    private static int convertToArabian(String s){
-        switch (s) {
-            case "I":
-                return 1;
-            case "II":
-                return 2;
-            case "III":
-                return 3;
-            case "IV":
-                return 4;
-            case "V":
-                return 5;
-            case "VI":
-                return 6;
-            case "VII":
-                return 7;
-            case "VIII":
-                return 8;
-            case "IX":
-                return 9;
-            default:
-                return 10;
-        }
-    }
-}
+ }
+
