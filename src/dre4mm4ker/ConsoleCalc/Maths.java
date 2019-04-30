@@ -8,14 +8,19 @@ class Maths {
     static String Calculate(Splitter.Sign sign, boolean isArabian, int a, int b) {
         int temp;
 
-        if (sign == Splitter.Sign.PLUS) {
-            temp = a + b;
-        } else if (sign == Splitter.Sign.MINUS) {
-            temp = a - b;
-        } else if (sign == Splitter.Sign.MULTIPLE) {
-            temp = a * b;
-        } else {
-            temp = a / b;
+        switch (sign) {
+            case PLUS:
+                temp = a + b;
+                break;
+            case MINUS:
+                temp = a - b;
+                break;
+            case MULTIPLE:
+                temp = a * b;
+                break;
+            default:
+                temp = a / b;
+                break;
         }
 
         if (isArabian) {
