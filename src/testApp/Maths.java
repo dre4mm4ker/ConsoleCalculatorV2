@@ -1,3 +1,5 @@
+package testApp;
+
 class Maths {
 
     String result;
