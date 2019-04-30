@@ -1,10 +1,10 @@
 package testApp;
 
-public class InputException extends Exception{
+public class InputException extends RuntimeException{
     public InputException() {
     }
 
-    public InputException(String message) {
+    InputException(String message) {
         super(message);
     }
 
