@@ -18,8 +18,8 @@ class Splitter {
     static void Split(String inputNum) throws InputException {
         String arabPattern = "([1-9]|(10))";
         String romePattern = "(I|II|III|IV|V|VI|VII|VIII|IX|X)";
-        Pattern pattern1 = Pattern.compile("(" + arabPattern + "[+*/-]"+arabPattern+ ")|(" + romePattern + "[+*/-]" + romePattern + ")");
-        Pattern pattern2 = Pattern.compile(arabPattern + "[+*/-]"+arabPattern);
+        Pattern pattern1 = Pattern.compile("(" + arabPattern + "\\s*[+*/-]\\s*"+arabPattern+ ")|(" + romePattern + "\\s*[+*/-]\\s*" + romePattern + ")");
+        Pattern pattern2 = Pattern.compile(arabPattern + "\\s*[+*/-]\\s*"+arabPattern);
         Matcher matcher1 = pattern1.matcher(inputNum);
         Matcher matcher2 = pattern2.matcher(inputNum);
 
@@ -27,7 +27,7 @@ class Splitter {
             throw new InputException("Incorrect input");
         }
 
-        String[] nums = inputNum.split("[+/*-]");
+        String[] nums = inputNum.split("\\s*[+/*-]\\s*");
         if (inputNum.contains("+")) sign = Sign.PLUS;
         else if (inputNum.contains("-")) sign = Sign.MINUS;
         else if (inputNum.contains("*")) sign = Sign.MULTIPLE;
