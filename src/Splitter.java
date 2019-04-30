@@ -1,3 +1,4 @@
+import java.util.Scanner;
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 
@@ -7,7 +8,10 @@ public class Splitter {
     int sign; // 1(сложение), 2(вычетание), 3(умножение), 4(деление)
     boolean ar; // true - арабские, false - римские
 
-    public Splitter(String s) throws InputException {
+    public Splitter() throws InputException {
+        Scanner sc = new Scanner(System.in);
+        String s = sc.nextLine();
+
         String arabPattern = "([1-9]|(10))";
         String romePattern = "(I|II|III|IV|V|VI|VII|VIII|IX|X)";
         Pattern pattern1 = Pattern.compile("(" + arabPattern + "[+*/-]"+arabPattern+ ")|(" + romePattern + "[+*/-]" + romePattern + ")");
@@ -33,11 +37,11 @@ public class Splitter {
         }
         else {
             this.ar = false;
-            this.a = toArabian(nums[0]);
-            this.b = toArabian(nums[1]);
+            this.a = convertToArabian(nums[0]);
+            this.b = convertToArabian(nums[1]);
         }
     }
-    private int toArabian(String s){
+    private static int convertToArabian(String s){
         switch (s) {
             case "I":
                 return 1;

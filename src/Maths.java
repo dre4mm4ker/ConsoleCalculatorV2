@@ -19,9 +19,10 @@ class Maths {
         if (ar){this.result = String.valueOf(temp); }
         else {
             try {
-                this.result = convert(temp);
+                this.result = convertToArabian(temp);
             } catch (InputException e) {
                 e.printStackTrace();
+                System.exit(0);
             }
         }
     }
@@ -70,7 +71,7 @@ class Maths {
         return "";
     }
 
-    public static String convert(int number) throws InputException {
+    public static String convertToArabian(int number) throws InputException {
 
         if (number <= 0){
             throw new InputException("There is no 0 or negative numbers in Roman Numerals");
@@ -85,8 +86,6 @@ class Maths {
         String romanThousands = romanDigit(number%10, "M", "", "");
 
 
-        String result = romanThousands + romanHundreds + romanTens + romanOnes;
-
-        return result;
+        return romanThousands + romanHundreds + romanTens + romanOnes;
     }
 }
