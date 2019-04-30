@@ -4,10 +4,9 @@ import static testApp.Converter.convertToArabian;
 
 class Maths {
 
-    String result;
     //sign - 1(сложение), 2(вычетание), 3(умножение), 4(деление)
     //ar - (true - арабские), (false - римские)
-    public Maths(int sign, boolean ar, int a, int b) {
+    static String Calculate(int sign, boolean ar, int a, int b) {
         int temp;
 
         if (sign == 1) {
@@ -20,15 +19,15 @@ class Maths {
             temp = a / b;
         }
 
-        if (ar){this.result = String.valueOf(temp); }
+        if (ar){return String.valueOf(temp); }
         else {
             try {
-
-                this.result = convertToArabian(temp);
+                return convertToArabian(temp);
             } catch (InputException e) {
                 e.printStackTrace();
                 System.exit(0);
             }
         }
+    return "";
     }
 }
