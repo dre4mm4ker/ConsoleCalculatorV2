@@ -2,6 +2,8 @@ package dre4mm4ker.ConsoleCalc;
 
 import java.util.Scanner;
 
+import static dre4mm4ker.ConsoleCalc.Converter.convertToRomanian;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -9,7 +11,12 @@ public class Main {
         while (true) {
                 String s = sc.nextLine();
                 Splitter.Split(s);
-                System.out.println(Maths.Calculate(Splitter.sign, Splitter.isArabian, Splitter.a, Splitter.b));
+                Calculator.calculate(Splitter.sign, Splitter.a, Splitter.b);
+            if (Splitter.isArabian) {
+                System.out.println(Calculator.result);
+            } else {
+                System.out.println(convertToRomanian(Calculator.result));
+            }
         }
     }
 }

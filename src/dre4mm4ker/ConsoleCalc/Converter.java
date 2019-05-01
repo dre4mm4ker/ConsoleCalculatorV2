@@ -26,6 +26,22 @@ class Converter {
                 return 10;
         }
     }
+
+    static String convertToRomanian(int number) throws InputException {
+
+        if (number <= 0){
+            throw new InputException("There is no 0 or negative numbers in Roman Numerals");
+        }
+
+        String romanOnes = romanDigit( number%10, "I", "V", "X");
+        number /=10;
+        String romanTens = romanDigit( number%10, "X", "L", "C");
+        number /=10;
+        String romanHundreds = romanDigit(number%10, "C", "D", "M");
+
+        return romanHundreds + romanTens + romanOnes;
+    }
+
     private static String romanDigit(int n, String one, String five, String ten){
 
         if(n >= 1)
@@ -55,21 +71,5 @@ class Converter {
         return "";
     }
 
-    static String convertToArabian(int number) throws InputException {
 
-        if (number <= 0){
-            throw new InputException("There is no 0 or negative numbers in Roman Numerals");
-        }
-
-        String romanOnes = romanDigit( number%10, "I", "V", "X");
-        number /=10;
-        String romanTens = romanDigit( number%10, "X", "L", "C");
-        number /=10;
-        String romanHundreds = romanDigit(number%10, "C", "D", "M");
-
-
-
-
-        return romanHundreds + romanTens + romanOnes;
-    }
 }
