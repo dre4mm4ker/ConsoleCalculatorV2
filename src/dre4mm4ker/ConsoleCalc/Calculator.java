@@ -4,24 +4,25 @@ package dre4mm4ker.ConsoleCalc;
 
 class Calculator {
 
-    static int result;
 
-    static void calculate(Splitter.Sign sign, int a, int b) {
+
+    static int calculate(Splitter.Sign sign, int a, int b) {
 
 
         switch (sign) {
             case PLUS:
-                result = a + b;
-                break;
+                return a + b;
+
             case MINUS:
-                result = a - b;
-                break;
+                 return a - b;
+
             case MULTIPLE:
-                result = a * b;
-                break;
-            default:
-                result = a / b;
-                break;
+                return  a * b;
+
+            case DIVIDE:
+                return a / b;
+
         }
+        return 0;
     }
 }

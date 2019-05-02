@@ -11,11 +11,10 @@ public class Main {
         while (true) {
                 String s = sc.nextLine();
                 Splitter.Split(s);
-                Calculator.calculate(Splitter.sign, Splitter.a, Splitter.b);
             if (Splitter.isArabian) {
-                System.out.println(Calculator.result);
+                System.out.println(Calculator.calculate(Splitter.sign, Splitter.a, Splitter.b));
             } else {
-                System.out.println(convertToRomanian(Calculator.result));
+                System.out.println(convertToRomanian(Calculator.calculate(Splitter.sign, Splitter.a, Splitter.b)));
             }
         }
     }
