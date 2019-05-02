@@ -7,9 +7,9 @@ import java.util.regex.Matcher;
 
 
 class Splitter {
+    enum Sign{PLUS, MINUS, MULTIPLE, DIVIDE}
     static int a;
     static int b;
-    enum Sign{PLUS, MINUS, MULTIPLE, DIVIDE}
     static boolean isArabian;
     static Sign sign;
 
@@ -19,16 +19,15 @@ class Splitter {
         String arabPattern = "([1-9]|10)";
         String romePattern = "(I|II|III|IV|V|VI|VII|VIII|IX|X)";
         Pattern pattern1 = Pattern.compile(arabPattern + "\\s([+*/-])\\s"+arabPattern+ "|" + romePattern + "\\s([+*/-])\\s" + romePattern);
-        Pattern pattern2 = Pattern.compile(arabPattern + "\\s([+*/-])\\s"+arabPattern);
         Matcher matcher1 = pattern1.matcher(inputNum);
-        Matcher matcher2 = pattern2.matcher(inputNum);
+
         int groupIndex;
 
         if(!matcher1.matches()){
             throw new InputException("Incorrect input");
         }
 
-        if(matcher2.matches()){
+        if(matcher1.group(1) != null){
             isArabian = true;
             a = Integer.parseInt(matcher1.group(1));
             b = Integer.parseInt(matcher1.group(3));
